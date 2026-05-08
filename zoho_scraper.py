@@ -130,13 +130,47 @@ def _apply_date_filter(page, target_year, target_month):
         last_day_d = next_month.replace(day=1) - __import__("datetime").timedelta(days=1)
         last_day = last_day_d.day
 
-    page.locator("#ZADateRangeFilterComp").get_by_text("- Selecionar -").click()
+    # Abrir date picker - tentar varios textos placeholder, fallback para click directo
+    date_filter = page.locator("#ZADateRangeFilterComp")
+    opened = False
+    for placeholder in ["- Selecionar -", "- Select -", "Select", "Selecionar"]:
+        try:
+            date_filter.get_by_text(placeholder, exact=False).first.click(timeout=4000)
+            opened = True
+            break
+        except Exception:
+            continue
+    if not opened:
+        # Ultimo recurso: clicar directamente no componente
+        date_filter.click()
+    time.sleep(1)
+
+    # Navegar meses para tras
     for _ in range(months_back):
-        page.get_by_role("button", name="Previous Month").click()
+        # Tentar PT primeiro depois EN
+        clicked = False
+        for btn_name in ["Previous Month", "Mes anterior", "Mês anterior"]:
+            try:
+                page.get_by_role("button", name=btn_name).click(timeout=2000)
+                clicked = True
+                break
+            except Exception:
+                continue
+        if not clicked:
+            raise RuntimeError("Nao consegui navegar para mes anterior no date picker")
         time.sleep(0.3)
+
+    # Seleccionar dia 1 (start) e dia X (end)
     page.get_by_role("gridcell", name="1", exact=True).click()
     page.get_by_label(str(last_day)).get_by_text(str(last_day), exact=True).click()
-    page.get_by_role("button", name="OK").click()
+
+    # OK
+    for ok_name in ["OK", "Ok", "Aplicar", "Apply"]:
+        try:
+            page.get_by_role("button", name=ok_name).click(timeout=2000)
+            break
+        except Exception:
+            continue
     time.sleep(3)
 
 
@@ -201,22 +235,52 @@ def fetch_zoho_data(year, month, concessionarios, lead_sources=None, headless=Fa
     }
 
     with sync_playwright() as p:
-        browser = p.chromium.launch(headless=headless, slow_mo=slow_mo)
-        context = browser.new_context(viewport={"width": 1920, "height": 1080})
+        # Em modo headless usar o Chromium completo (--headless=new) em vez
+        # do chrome-headless-shell (que e mais leve mas alguns sites detectam).
+        launch_args = ["--headless=new"] if headless else []
+        # User-Agent realista (Chrome 131 em Windows) - evita deteccao de bot
+        ua = ("Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
+              "(KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36")
+
+        browser = p.chromium.launch(headless=headless, slow_mo=slow_mo, args=launch_args)
+        context = browser.new_context(
+            viewport={"width": 1920, "height": 1080},
+            user_agent=ua,
+            locale="pt-PT",
+            timezone_id="Europe/Lisbon",
+            extra_http_headers={"Accept-Language": "pt-PT,pt;q=0.9,en;q=0.8"},
+        )
+        # Anti-deteccao: esconde flag navigator.webdriver=true que Playwright define
+        context.add_init_script(
+            "Object.defineProperty(navigator, 'webdriver', { get: () => undefined });"
+        )
         page = context.new_page()
 
-        print(f"[fetch] Abrir Zoho para {year}-{month:02d}, {concessionarios}, {lead_sources}")
-        page.goto(ZOHO_URL, timeout=45000, wait_until="domcontentloaded")
-        page.wait_for_load_state("networkidle", timeout=30000)
-        time.sleep(5)
+        print(f"[fetch] Abrir Zoho para {year}-{month:02d}, {concessionarios}, {lead_sources} (headless={headless})")
+        page.goto(ZOHO_URL, timeout=60000, wait_until="domcontentloaded")
+        try:
+            page.wait_for_load_state("networkidle", timeout=45000)
+        except:
+            print("  Aviso: networkidle nao alcancado em 45s, prosseguir")
+        time.sleep(7 if headless else 5)
 
-        # 3 filtros base
-        _apply_date_filter(page, year, month)
-        print(f"  Mes aplicado")
-        _apply_concessionario_filter(page, concessionarios)
-        print(f"  Concessionario aplicado")
-        _apply_lead_source_filter(page, lead_sources)
-        print(f"  Lead Source aplicado")
+        # 3 filtros base (com screenshot de debug se falhar)
+        try:
+            _apply_date_filter(page, year, month)
+            print(f"  Mes aplicado")
+            _apply_concessionario_filter(page, concessionarios)
+            print(f"  Concessionario aplicado")
+            _apply_lead_source_filter(page, lead_sources)
+            print(f"  Lead Source aplicado")
+        except Exception as e:
+            # Em caso de falha, guarda screenshot para debug
+            try:
+                debug_path = f"debug-{concessionarios[0].replace(' ', '_').replace('/', '_')}-{year}-{month:02d}.png"
+                page.screenshot(path=debug_path, full_page=True)
+                print(f"  >> Screenshot debug guardado: {debug_path}")
+            except Exception:
+                pass
+            raise e
 
         # Totais com filtros base
         result["totals"]["leads"] = _read_kpi(page, "Leads")
