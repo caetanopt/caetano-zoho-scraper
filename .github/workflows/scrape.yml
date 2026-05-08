@@ -1,0 +1,55 @@
+name: Scrape Zoho Data
+
+on:
+  schedule:
+    - cron: '0 5 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  scrape:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: 'pip'
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+          python -m playwright install chromium --with-deps
+          sudo apt-get install -y xvfb
+
+      - name: Determine target month (current UTC)
+        id: month
+        run: echo "value=$(date -u +%Y-%m)" >> "$GITHUB_OUTPUT"
+
+      - name: Run scraper for all 13 brands, current month (visible em xvfb)
+        run: |
+          xvfb-run -a python zoho_batch.py \
+            --brands all \
+            --months ${{ steps.month.outputs.value }} \
+            --merge \
+            --output zoho-data.json
+
+      - name: Commit zoho-data.json if changed
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add zoho-data.json
+          if git diff --staged --quiet; then
+            echo "Sem alteracoes - skip commit"
+          else
+            git commit -m "Auto: actualizar zoho-data $(date -u +%Y-%m-%d)"
+            git push
+          fi
