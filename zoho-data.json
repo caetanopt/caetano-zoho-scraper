@@ -1,0 +1,24 @@
+{
+  "_metadata": {
+    "description": "Dados do Zoho Analytics agregados por marca, mes e ID Landing.",
+    "format": "{ marca: { 'mes ano': { totals: {...}, by_id_landing: { id: {leads, oportunidades, taxa_oportunidade} } } } }",
+    "lead_sources": ["Facebook", "Instagram"],
+    "last_update": "2026-05-08"
+  },
+  "Renault": {
+    "abril 2026": {
+      "totals": {
+        "leads": 202,
+        "oportunidades": 32,
+        "taxa_oportunidade": 15.84
+      },
+      "by_id_landing": {
+        "Unknown": { "leads": 4,   "oportunidades": 1,  "taxa_oportunidade": 25.0 },
+        "0":       { "leads": 5,   "oportunidades": 2,  "taxa_oportunidade": 40.0 },
+        "1151":    { "leads": 1,   "oportunidades": 0,  "taxa_oportunidade": 0.0 },
+        "2531":    { "leads": 153, "oportunidades": 24, "taxa_oportunidade": 15.69 },
+        "3818":    { "leads": 39,  "oportunidades": 4,  "taxa_oportunidade": 10.26 }
+      }
+    }
+  }
+}
