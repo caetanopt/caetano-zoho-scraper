@@ -6,7 +6,7 @@
       "Facebook",
       "Instagram"
     ],
-    "last_update": "2026-05-08 17:20"
+    "last_update": "2026-05-09 07:04"
   },
   "Renault": {
     "abril 2026": {
@@ -166,15 +166,15 @@
   "Škoda": {
     "maio 2026": {
       "totals": {
-        "leads": 24,
-        "oportunidades": 1,
-        "taxa_oportunidade": 4.17
+        "leads": 27,
+        "oportunidades": 2,
+        "taxa_oportunidade": 7.41
       },
       "by_id_landing": {
         "1960": {
-          "leads": 24,
-          "oportunidades": 1,
-          "taxa_oportunidade": 4.17
+          "leads": 27,
+          "oportunidades": 2,
+          "taxa_oportunidade": 7.41
         }
       }
     }
@@ -183,14 +183,14 @@
     "maio 2026": {
       "totals": {
         "leads": 3,
-        "oportunidades": 0,
-        "taxa_oportunidade": 0.0
+        "oportunidades": 1,
+        "taxa_oportunidade": 33.33
       },
       "by_id_landing": {
         "0": {
           "leads": 3,
-          "oportunidades": 0,
-          "taxa_oportunidade": 0.0
+          "oportunidades": 1,
+          "taxa_oportunidade": 33.33
         }
       }
     }
@@ -198,13 +198,13 @@
   "Alpine": {
     "maio 2026": {
       "totals": {
-        "leads": 11,
+        "leads": 18,
         "oportunidades": 0,
         "taxa_oportunidade": 0.0
       },
       "by_id_landing": {
         "1778": {
-          "leads": 11,
+          "leads": 18,
           "oportunidades": 0,
           "taxa_oportunidade": 0.0
         }
@@ -214,15 +214,15 @@
   "Dacia": {
     "maio 2026": {
       "totals": {
-        "leads": 33,
-        "oportunidades": 7,
-        "taxa_oportunidade": 21.21
+        "leads": 42,
+        "oportunidades": 9,
+        "taxa_oportunidade": 21.43
       },
       "by_id_landing": {
         "1276": {
-          "leads": 33,
-          "oportunidades": 7,
-          "taxa_oportunidade": 21.21
+          "leads": 42,
+          "oportunidades": 9,
+          "taxa_oportunidade": 21.43
         }
       }
     }
