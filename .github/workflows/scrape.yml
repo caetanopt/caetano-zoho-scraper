@@ -2,11 +2,12 @@ name: Scrape Zoho Data
 
 on:
   schedule:
+    # Diariamente as 05:00 UTC (06:00 Lisboa Verao / 05:00 Lisboa Inverno)
     - cron: '0 5 * * *'
-  workflow_dispatch:
+  workflow_dispatch:        # permite trigger manual no separador Actions
 
 permissions:
-  contents: write
+  contents: write           # necessario para o action commitar zoho-data.json
 
 jobs:
   scrape:
@@ -15,10 +16,10 @@ jobs:
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
 
       - name: Setup Python
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@v6
         with:
           python-version: '3.12'
           cache: 'pip'
@@ -44,7 +45,7 @@ jobs:
 
       - name: Upload debug screenshots if any
         if: always()
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v5
         with:
           name: debug-screenshots
           path: debug-*.png
