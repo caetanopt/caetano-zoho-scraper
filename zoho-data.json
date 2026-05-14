@@ -6,7 +6,7 @@
       "Facebook",
       "Instagram"
     ],
-    "last_update": "2026-05-14 17:34"
+    "last_update": "2026-05-14 16:41"
   },
   "Renault": {
     "abril 2026": {
@@ -1714,6 +1714,13 @@
           "taxa_oportunidade": 50.0
         }
       }
+    },
+    "maio 2026": {
+      "totals": {
+        "leads": 0,
+        "oportunidades": 2
+      },
+      "by_id_landing": {}
     }
   }
 }
