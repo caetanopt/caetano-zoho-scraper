@@ -109,8 +109,8 @@ def _read_kpi(page, kpi_label):
             try:
                 return float(val_clean) if "." in val_clean else int(val_clean)
             except:
-                return val
-    return None
+                return 0
+    return 0
 
 
 # ─── Logica de filtro (date range parametrizavel) ───────────────
@@ -295,7 +295,7 @@ def fetch_zoho_data(year, month, concessionarios, lead_sources=None, headless=Fa
         _open_filter_dropdown_by_label(page, "ID Landing")
         time.sleep(2)
         opts = _list_dropdown_options(page)
-        ids_landing = [o for o in opts if o.lower() != "todos"]
+        ids_landing = [o for o in opts if o.lower() != "todos" and not o.startswith("--")]
         page.keyboard.press("Escape")
         time.sleep(1)
         print(f"  {len(ids_landing)} IDs Landing: {ids_landing}")
