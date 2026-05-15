@@ -46,6 +46,8 @@ jobs:
       - name: Upload debug screenshots if any
         if: always()
         uses: actions/upload-artifact@v5
+        env:
+          FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
         with:
           name: debug-screenshots
           path: debug-*.png
