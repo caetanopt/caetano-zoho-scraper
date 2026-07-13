@@ -6,7 +6,7 @@
       "Facebook",
       "Instagram"
     ],
-    "last_update": "2026-07-12 07:25"
+    "last_update": "2026-07-13 08:12"
   },
   "Renault": {
     "abril 2026": {
@@ -215,9 +215,9 @@
     },
     "julho 2026": {
       "totals": {
-        "leads": 90,
+        "leads": 97,
         "oportunidades": 28,
-        "taxa_oportunidade": 31.11
+        "taxa_oportunidade": 28.87
       },
       "by_id_landing": {
         "Unknown": {
@@ -231,14 +231,14 @@
           "taxa_oportunidade": 0.0
         },
         "2531": {
-          "leads": 26,
+          "leads": 27,
           "oportunidades": 8,
-          "taxa_oportunidade": 30.77
+          "taxa_oportunidade": 29.63
         },
         "3388": {
-          "leads": 20,
+          "leads": 21,
           "oportunidades": 5,
-          "taxa_oportunidade": 25.0
+          "taxa_oportunidade": 23.81
         },
         "4729": {
           "leads": 14,
@@ -246,9 +246,9 @@
           "taxa_oportunidade": 28.57
         },
         "4812": {
-          "leads": 28,
+          "leads": 33,
           "oportunidades": 8,
-          "taxa_oportunidade": 28.57
+          "taxa_oportunidade": 24.24
         }
       }
     }
@@ -415,10 +415,22 @@
     },
     "julho 2026": {
       "totals": {
-        "leads": 0,
-        "oportunidades": 0
+        "leads": 4,
+        "oportunidades": 0,
+        "taxa_oportunidade": 0.0
       },
-      "by_id_landing": {}
+      "by_id_landing": {
+        "Unknown": {
+          "leads": 1,
+          "oportunidades": 0,
+          "taxa_oportunidade": 0.0
+        },
+        "003001": {
+          "leads": 3,
+          "oportunidades": 0,
+          "taxa_oportunidade": 0.0
+        }
+      }
     }
   },
   "MINI": {
@@ -558,10 +570,17 @@
     },
     "julho 2026": {
       "totals": {
-        "leads": 0,
-        "oportunidades": 1
+        "leads": 1,
+        "oportunidades": 1,
+        "taxa_oportunidade": 100.0
       },
-      "by_id_landing": {}
+      "by_id_landing": {
+        "Unknown": {
+          "leads": 1,
+          "oportunidades": 1,
+          "taxa_oportunidade": 100.0
+        }
+      }
     }
   },
   "Motorrad": {
