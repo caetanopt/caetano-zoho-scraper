@@ -6,7 +6,7 @@
       "Facebook",
       "Instagram"
     ],
-    "last_update": "2026-07-17 07:12"
+    "last_update": "2026-07-18 06:56"
   },
   "Renault": {
     "abril 2026": {
@@ -1893,8 +1893,8 @@
         },
         "2272": {
           "leads": 16,
-          "oportunidades": 1,
-          "taxa_oportunidade": 6.25
+          "oportunidades": 2,
+          "taxa_oportunidade": 12.5
         }
       }
     }
@@ -2121,9 +2121,9 @@
     },
     "julho 2026": {
       "totals": {
-        "leads": 5,
-        "oportunidades": 1,
-        "taxa_oportunidade": 20.0
+        "leads": 9,
+        "oportunidades": 3,
+        "taxa_oportunidade": 33.33
       },
       "by_id_landing": {
         "0": {
@@ -2132,7 +2132,12 @@
           "taxa_oportunidade": 0.0
         },
         "001001": {
-          "leads": 4,
+          "leads": 7,
+          "oportunidades": 2,
+          "taxa_oportunidade": 28.57
+        },
+        "160": {
+          "leads": 1,
           "oportunidades": 0,
           "taxa_oportunidade": 0.0
         }
