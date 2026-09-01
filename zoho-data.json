@@ -6,7 +6,7 @@
       "Facebook",
       "Instagram"
     ],
-    "last_update": "2026-08-31 11:16"
+    "last_update": "2026-09-01 09:42"
   },
   "Renault": {
     "abril 2026": {
@@ -288,6 +288,20 @@
           "leads": 31,
           "oportunidades": 6,
           "taxa_oportunidade": 19.35
+        }
+      }
+    },
+    "setembro 2026": {
+      "totals": {
+        "leads": 2,
+        "oportunidades": 0,
+        "taxa_oportunidade": 0.0
+      },
+      "by_id_landing": {
+        "2531": {
+          "leads": 2,
+          "oportunidades": 0,
+          "taxa_oportunidade": 0.0
         }
       }
     }
@@ -2180,6 +2194,20 @@
           "taxa_oportunidade": 17.72
         }
       }
+    },
+    "setembro 2026": {
+      "totals": {
+        "leads": 1,
+        "oportunidades": 0,
+        "taxa_oportunidade": 0.0
+      },
+      "by_id_landing": {
+        "2272": {
+          "leads": 1,
+          "oportunidades": 0,
+          "taxa_oportunidade": 0.0
+        }
+      }
     }
   },
   "Peugeot": {
@@ -2469,6 +2497,13 @@
           "taxa_oportunidade": 0.0
         }
       }
+    },
+    "setembro 2026": {
+      "totals": {
+        "leads": 0,
+        "oportunidades": 0
+      },
+      "by_id_landing": {}
     }
   },
   "Mercedes-Benz": {
