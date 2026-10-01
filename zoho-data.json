@@ -6,7 +6,7 @@
       "Facebook",
       "Instagram"
     ],
-    "last_update": "2026-09-30 10:50"
+    "last_update": "2026-10-01 11:17"
   },
   "Renault": {
     "abril 2026": {
@@ -327,6 +327,30 @@
           "leads": 20,
           "oportunidades": 2,
           "taxa_oportunidade": 10.0
+        }
+      }
+    },
+    "outubro 2026": {
+      "totals": {
+        "leads": 3,
+        "oportunidades": 0,
+        "taxa_oportunidade": 0.0
+      },
+      "by_id_landing": {
+        "Unknown": {
+          "leads": 1,
+          "oportunidades": 0,
+          "taxa_oportunidade": 0.0
+        },
+        "1159": {
+          "leads": 1,
+          "oportunidades": 0,
+          "taxa_oportunidade": 0.0
+        },
+        "3388": {
+          "leads": 1,
+          "oportunidades": 0,
+          "taxa_oportunidade": 0.0
         }
       }
     }
@@ -1543,6 +1567,13 @@
           "taxa_oportunidade": 0.0
         }
       }
+    },
+    "outubro 2026": {
+      "totals": {
+        "leads": 0,
+        "oportunidades": 0
+      },
+      "by_id_landing": {}
     }
   },
   "Škoda": {
@@ -2394,6 +2425,13 @@
           "taxa_oportunidade": 26.32
         }
       }
+    },
+    "outubro 2026": {
+      "totals": {
+        "leads": 0,
+        "oportunidades": 0
+      },
+      "by_id_landing": {}
     }
   },
   "Peugeot": {
@@ -2707,6 +2745,13 @@
           "taxa_oportunidade": 17.78
         }
       }
+    },
+    "outubro 2026": {
+      "totals": {
+        "leads": 0,
+        "oportunidades": 0
+      },
+      "by_id_landing": {}
     }
   },
   "Mercedes-Benz": {
