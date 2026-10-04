@@ -6,7 +6,7 @@
       "Facebook",
       "Instagram"
     ],
-    "last_update": "2026-10-03 10:09"
+    "last_update": "2026-10-04 10:50"
   },
   "Renault": {
     "abril 2026": {
@@ -332,30 +332,35 @@
     },
     "outubro 2026": {
       "totals": {
-        "leads": 9,
-        "oportunidades": 1,
-        "taxa_oportunidade": 11.11
+        "leads": 17,
+        "oportunidades": 3,
+        "taxa_oportunidade": 17.65
       },
       "by_id_landing": {
         "Unknown": {
-          "leads": 1,
+          "leads": 3,
           "oportunidades": 0,
           "taxa_oportunidade": 0.0
         },
         "1159": {
-          "leads": 5,
-          "oportunidades": 0,
-          "taxa_oportunidade": 0.0
+          "leads": 7,
+          "oportunidades": 1,
+          "taxa_oportunidade": 14.29
         },
         "2531": {
+          "leads": 3,
+          "oportunidades": 1,
+          "taxa_oportunidade": 33.33
+        },
+        "3388": {
+          "leads": 3,
+          "oportunidades": 1,
+          "taxa_oportunidade": 33.33
+        },
+        "4812": {
           "leads": 1,
           "oportunidades": 0,
           "taxa_oportunidade": 0.0
-        },
-        "3388": {
-          "leads": 2,
-          "oportunidades": 1,
-          "taxa_oportunidade": 50.0
         }
       }
     }
@@ -1575,10 +1580,17 @@
     },
     "outubro 2026": {
       "totals": {
-        "leads": 0,
-        "oportunidades": 0
+        "leads": 2,
+        "oportunidades": 0,
+        "taxa_oportunidade": 0.0
       },
-      "by_id_landing": {}
+      "by_id_landing": {
+        "3184": {
+          "leads": 2,
+          "oportunidades": 0,
+          "taxa_oportunidade": 0.0
+        }
+      }
     }
   },
   "Škoda": {
