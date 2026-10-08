@@ -6,7 +6,7 @@
       "Facebook",
       "Instagram"
     ],
-    "last_update": "2026-10-07 11:27"
+    "last_update": "2026-10-08 11:51"
   },
   "Renault": {
     "abril 2026": {
@@ -332,9 +332,9 @@
     },
     "outubro 2026": {
       "totals": {
-        "leads": 24,
-        "oportunidades": 4,
-        "taxa_oportunidade": 16.67
+        "leads": 25,
+        "oportunidades": 5,
+        "taxa_oportunidade": 20.0
       },
       "by_id_landing": {
         "Unknown": {
@@ -349,13 +349,13 @@
         },
         "2531": {
           "leads": 6,
-          "oportunidades": 1,
-          "taxa_oportunidade": 16.67
+          "oportunidades": 2,
+          "taxa_oportunidade": 33.33
         },
         "3388": {
-          "leads": 3,
+          "leads": 4,
           "oportunidades": 1,
-          "taxa_oportunidade": 33.33
+          "taxa_oportunidade": 25.0
         },
         "4812": {
           "leads": 3,
@@ -1003,15 +1003,15 @@
     },
     "outubro 2026": {
       "totals": {
-        "leads": 27,
-        "oportunidades": 0,
-        "taxa_oportunidade": 0.0
+        "leads": 30,
+        "oportunidades": 4,
+        "taxa_oportunidade": 13.33
       },
       "by_id_landing": {
         "074001": {
-          "leads": 27,
-          "oportunidades": 0,
-          "taxa_oportunidade": 0.0
+          "leads": 30,
+          "oportunidades": 4,
+          "taxa_oportunidade": 13.33
         }
       }
     }
@@ -2075,13 +2075,18 @@
     },
     "outubro 2026": {
       "totals": {
-        "leads": 7,
+        "leads": 10,
         "oportunidades": 0,
         "taxa_oportunidade": 0.0
       },
       "by_id_landing": {
+        "0": {
+          "leads": 1,
+          "oportunidades": 0,
+          "taxa_oportunidade": 0.0
+        },
         "022001": {
-          "leads": 7,
+          "leads": 9,
           "oportunidades": 0,
           "taxa_oportunidade": 0.0
         }
@@ -2509,7 +2514,7 @@
     "outubro 2026": {
       "totals": {
         "leads": 0,
-        "oportunidades": 0
+        "oportunidades": 1
       },
       "by_id_landing": {}
     }
@@ -3286,10 +3291,17 @@
     },
     "outubro 2026": {
       "totals": {
-        "leads": 0,
-        "oportunidades": 0
+        "leads": 20,
+        "oportunidades": 0,
+        "taxa_oportunidade": 0.0
       },
-      "by_id_landing": {}
+      "by_id_landing": {
+        "1542": {
+          "leads": 20,
+          "oportunidades": 0,
+          "taxa_oportunidade": 0.0
+        }
+      }
     }
   }
 }
